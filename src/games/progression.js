@@ -1,26 +1,26 @@
-import { getRandomNumber } from '../utils.js';
+import { getRandomNumber } from '../utils.js'
 
 const generateProgression = (start, step, length) => {
-  const progression = [];
+  const progression = []
   for (let i = 0; i < length; i += 1) {
-    progression.push(start + step * i);
+    progression.push(start + step * i)
   }
-  return progression;
-};
+  return progression
+}
 
 export const generateRound = () => {
-  const start = getRandomNumber(1, 50);
-  const step = getRandomNumber(1, 10);
-  const length = getRandomNumber(5, 10);
-  const hiddenIndex = getRandomNumber(0, length - 1);
+  const start = getRandomNumber(1, 50)
+  const step = getRandomNumber(1, 10)
+  const length = getRandomNumber(5, 10)
+  const hiddenIndex = getRandomNumber(0, length - 1)
   
-  const progression = generateProgression(start, step, length);
-  const answer = String(progression[hiddenIndex]);
+  const progression = generateProgression(start, step, length)
+  const answer = String(progression[hiddenIndex])
   
-  progression[hiddenIndex] = '..';
-  const question = progression.join(' ');
+  progression[hiddenIndex] = '..'
+  const question = progression.join(' ')
 
-  return [question, answer];
+  return [question, answer]
 };
 
-export const rules = 'What number is missing in the progression?';
+export const rules = 'What number is missing in the progression?'
