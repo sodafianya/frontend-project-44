@@ -7,5 +7,5 @@ export function greetUser() {
   return name
 }
 
-export const askQuestion = (question) => 
+export const askQuestion = question =>
   readlineSync.question(`${question}\nYour answer: `)
